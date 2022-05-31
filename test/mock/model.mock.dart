@@ -28,11 +28,9 @@ final PedidoModel pedidoModelMock = PedidoModel(
 final PedidoModel pedidoModelWithOneItemMock =
     PedidoModel(produtos: [produtoModelMock], mesa: mesaOcupadaModelMock);
 
-final ObservableList<PedidoModel> pedidosAtivosEmptyModelMock =
-    ObservableList.of([]);
+final List<PedidoModel> pedidosAtivosEmptyModelMock = [];
 
-final ObservableList<PedidoModel> pedidosAtivosModelMock =
-    ObservableList.of([pedidoModelMock]);
+final List<PedidoModel> pedidosAtivosModelMock = [pedidoModelMock];
 
 final HistoricoModel historicoModelMock =
     HistoricoModel(total: 30, pedido: pedidoModelMock, horario: '18:00');

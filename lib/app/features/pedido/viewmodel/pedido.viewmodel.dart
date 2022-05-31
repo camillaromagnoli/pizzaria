@@ -20,8 +20,7 @@ abstract class _PedidoViewModelBase with Store {
   @observable
   ObservableList<HistoricoModel> historico = ObservableList.of([]);
 
-  @observable
-  ObservableList<PedidoModel> pedidosAtivos = ObservableList.of([]);
+  List<PedidoModel> pedidosAtivos = [];
 
   @observable
   PedidoModel? pedido;
@@ -44,7 +43,7 @@ abstract class _PedidoViewModelBase with Store {
     atualizarListaPedidos();
   }
 
-  atualizarListaPedidos() {
+  void atualizarListaPedidos() {
     if (pedido != null) {
       limparPedidoAtual();
       pedidosAtivos.add(pedido!);

@@ -138,6 +138,9 @@ class _RegistrarPedidoViewState extends State<RegistrarPedidoView> {
                             preco: double.parse(_precoProdutoController.text),
                           );
                           Modular.to.pop();
+                          _nomeProdutoController.clear();
+                          _quantidadeProdutoController.clear();
+                          _precoProdutoController.clear();
                         }
                       },
                       child: const Text('Salvar'),

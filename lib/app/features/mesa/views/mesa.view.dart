@@ -98,6 +98,7 @@ class _MesaViewState extends State<MesaView> {
                   viewmodel
                       .registrarMesa(int.parse(_numeroMesaController.text));
                   Modular.to.pop();
+                  _numeroMesaController.clear();
                 }
               },
               child: const Text('Salvar'),

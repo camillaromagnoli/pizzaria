@@ -25,22 +25,6 @@ mixin _$PedidoViewModel on _PedidoViewModelBase, Store {
     });
   }
 
-  late final _$pedidosAtivosAtom =
-      Atom(name: '_PedidoViewModelBase.pedidosAtivos', context: context);
-
-  @override
-  ObservableList<PedidoModel> get pedidosAtivos {
-    _$pedidosAtivosAtom.reportRead();
-    return super.pedidosAtivos;
-  }
-
-  @override
-  set pedidosAtivos(ObservableList<PedidoModel> value) {
-    _$pedidosAtivosAtom.reportWrite(value, super.pedidosAtivos, () {
-      super.pedidosAtivos = value;
-    });
-  }
-
   late final _$pedidoAtom =
       Atom(name: '_PedidoViewModelBase.pedido', context: context);
 
@@ -121,7 +105,6 @@ mixin _$PedidoViewModel on _PedidoViewModelBase, Store {
   String toString() {
     return '''
 historico: ${historico},
-pedidosAtivos: ${pedidosAtivos},
 pedido: ${pedido}
     ''';
   }
