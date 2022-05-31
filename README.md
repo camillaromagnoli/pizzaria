@@ -23,3 +23,10 @@ Para executar o projeto
 
 Ou através do player da IDE
 
+Para executar os testes
+
+``flutter test``
+
+Para executar os testes com coverage
+
+``flutter test --coverage``
