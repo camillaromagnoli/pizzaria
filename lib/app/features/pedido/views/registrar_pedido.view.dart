@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:pizzaria/app/features/pedido/model/produto.model.dart';
 import 'package:pizzaria/app/features/pedido/viewmodel/pedido.viewmodel.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 
 import '../../mesa/model/mesa.model.dart';
 
@@ -39,27 +40,29 @@ class _RegistrarPedidoViewState extends State<RegistrarPedidoView> {
               icon: const Icon(Icons.check))
         ],
       ),
-      body: viewmodel.pedido != null && viewmodel.pedido!.produtos.isNotEmpty
-          ? ListView.builder(
-              itemBuilder: (context, index) {
-                ProdutoModel produto = viewmodel.pedido!.produtos[index];
-                return ListTile(
-                  title: Text(produto.nome),
-                  subtitle: Text(
-                      'Quantidade: ${produto.quantidade.toString()} - Preço: R\$ ${produto.preco.toString()}'),
-                  trailing: IconButton(
-                    icon: const Icon(Icons.delete),
-                    onPressed: () {
-                      viewmodel.removerProduto(index);
-                    },
-                  ),
-                );
-              },
-              itemCount: viewmodel.pedido!.produtos.length,
-            )
-          : const Center(
-              child: Text('Nenhum produto cadastrado!'),
-            ),
+      body: Observer(builder: (_) {
+        return viewmodel.pedido != null && viewmodel.pedido!.produtos.isNotEmpty
+            ? ListView.builder(
+                itemBuilder: (context, index) {
+                  ProdutoModel produto = viewmodel.pedido!.produtos[index];
+                  return ListTile(
+                    title: Text(produto.nome),
+                    subtitle: Text(
+                        'Quantidade: ${produto.quantidade.toString()} - Preço: R\$ ${produto.preco.toString()}'),
+                    trailing: IconButton(
+                      icon: const Icon(Icons.delete),
+                      onPressed: () {
+                        viewmodel.removerProduto(index);
+                      },
+                    ),
+                  );
+                },
+                itemCount: viewmodel.pedido!.produtos.length,
+              )
+            : const Center(
+                child: Text('Nenhum produto cadastrado!'),
+              );
+      }),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           _adicionarProduto();
