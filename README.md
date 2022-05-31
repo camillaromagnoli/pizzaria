@@ -1,16 +1,25 @@
-# pizzaria
+# Pizzaria
 
-A new Flutter project.
+Projeto para melhorar habilidades em Flutter
 
-## Getting Started
+## Stack
 
-This project is a starting point for a Flutter application.
+Tecnologias e conceitos utilizados: 
 
-A few resources to get you started if this is your first Flutter project:
+- Flutter
+- MVVM
+- [MobX](https://pub.dev/packages/mobx)
+- [Flutter Modular](https://modular.flutterando.com.br/docs/intro/)
+- Testes unitários e de widget com [Modular test](https://modular.flutterando.com.br/docs/flutter_modular/test/) e [Mockito](https://docs.flutter.dev/cookbook/testing/unit/mocking)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Setup
+Este aplicativo foi desenvolvido utilizando o Flutter 2.10.5 e Dart 2.16.2
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Run
+
+Para executar o projeto
+
+``flutter run``
+
+Ou através do player da IDE
+
