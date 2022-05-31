@@ -39,7 +39,9 @@ void main() {
     testWidgets('Deve ir para a tela de histórico', (tester) async {
       await pumpWidgetWithMediaQueryAndMaterialApp(tester, const HomeView());
 
-      final menuItemHistorico = find.text('Histórico');
+      final menuItemHistorico =
+          find.byKey(const Key('menu_item_historico_key'));
+
       expect(menuItemHistorico, findsOneWidget);
 
       await tester.tap(menuItemHistorico);

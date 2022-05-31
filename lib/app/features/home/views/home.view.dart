@@ -17,6 +17,7 @@ class HomeView extends StatelessWidget {
             routeName: '/mesas',
           ),
           MenuItem(
+            key: Key('menu_item_historico_key'),
             title: 'Histórico',
             routeName: '/pedidos',
           )
